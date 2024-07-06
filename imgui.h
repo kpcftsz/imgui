@@ -26,9 +26,10 @@
 // Everything else should be asked in 'Issues'! We are building a database of cross-linked knowledge there.
 
 // Library Version
-// (Integer encoded as XYYZZ for use in #if preprocessor conditionals, e.g. '#if IMGUI_VERSION_NUM >= 12345')
+// (Integer encoded as XYYZZ for use in #if preprocessor conditionals, e.g. '#if IMGUI_VERSION_NUM >= <<<<<<< HEAD
 #define IMGUI_VERSION       "1.91.0 WIP"
 #define IMGUI_VERSION_NUM   19093
+
 #define IMGUI_HAS_TABLE
 #define IMGUI_HAS_VIEWPORT          // Viewport WIP branch
 #define IMGUI_HAS_DOCK              // Docking WIP branch
@@ -1055,6 +1056,10 @@ namespace ImGui
     IMGUI_API void              DestroyPlatformWindows();                                       // call DestroyWindow platform functions for all viewports. call from backend Shutdown() if you need to close platform windows before imgui shutdown. otherwise will be called by DestroyContext().
     IMGUI_API ImGuiViewport*    FindViewportByID(ImGuiID id);                                   // this is a helper for backends.
     IMGUI_API ImGuiViewport*    FindViewportByPlatformHandle(void* platform_handle);            // this is a helper for backends. the type platform_handle is decided by the backend (e.g. HWND, MyWindow*, GLFWwindow* etc.)
+
+    // Windows98 functions
+    IMGUI_API void          WinAddRect(const ImVec2& min, const ImVec2& max, bool inset);
+    IMGUI_API void          StyleWin98(ImGuiStyle* dst = NULL);
 
 } // namespace ImGui
 
